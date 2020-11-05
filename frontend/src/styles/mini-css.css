@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+:root {
+  --primary-color: #047AED;
+  --secondary-color: #1C3FA8;
+
+  --light-color: #F4F4F4;
+  --dark-color: #002240;
+
+  --success-color: #5CB85C;
+  --warning-color: #FFCC00;
+  --error-color: #D9534F;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body, input, textarea, button { font-family: 'Lato', sans-serif; }
+
+/* Utility classes */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  overflow: auto;
+  padding: 0 40px;
+}
+
+.card {
+  background-color: #FFF;
+  color: #444;
+
+  border-radius: 5px;
+  box-shadow: 0 3px 10px rgba(105, 77, 77, 0.3);
+
+  padding: 20px;
+  margin: 10px;
+}
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  padding: 10px 30px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+
+  color: #FFF;
+  background: var(--primary-color);
+
+  transition: transform 0.4s;
+}
+.btn:hover {
+  transform: scale(0.98);
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 1px solid #FFF;
+}
+
+/* Backgrounds & Colored Buttons */
+.bg-primary,
+.btn-primary {
+  background: var(--primary-color);
+  color: #FFF;
+}
+
+.bg-secondary,
+.btn-secondary {
+  background: var(--secondary-color);
+  color: #FFF;
+}
+
+.bg-light,
+.btn-light {
+  background: var(--light-color);
+  color: #333;
+}
+
+.bg-dark,
+.btn-dark {
+  background: var(--dark-color);
+  color: #FFF;
+}
+
+.bg-success,
+.btn-success {
+  background: var(--success-color);
+  color: #FFF;
+}
+
+.bg-warning,
+.btn-warning {
+  background: var(--warning-color);
+  color: #333;
+}
+
+.bg-error,
+.btn-error {
+  background: var(--error-color);
+  color: #FFF;
+}
+
+.bg-primary a,
+.btn-primary a,
+.bg-secondary a,
+.btn-secondary a,
+.bg-dark a,
+.btn-dark a {
+  color: #FFF;
+}
+
+/* Text sizes */
+.lead {
+  font-size: 20px;
+}
+
+.sm { font-size: 1rem; }
+.md { font-size: 2rem; }
+.lg { font-size: 3rem; }
+.xl { font-size: 4rem; }
+
+/* Text Colors */
+.text-primary { color: var(--primary-color); }
+.text-secondary { color: var(--secondary-color); }
+.text-light { color: var(--light-color); }
+.text-dark { color: var(--dark-color); }
+.text-success { color: var(--success-color); }
+.text-warning { color: var(--warning-color); }
+.text-error { color: var(--error-color); }
+
+/* Alerts */
+.alert {
+  background: transparent;
+  padding: 10px 20px;
+  margin: 15px 0;
+  font-weight: bold;
+  border-radius: 5px;
+
+  border: 1px solid #CCC;
+}
+
+.alert i { margin-right: 10px; }
+
+.alert-success {
+  background-color: var(--success-color);
+  color: #FFF;
+
+  border: none;
+}
+
+.alert-warning {
+  background-color: var(--warning-color);
+  color: #333;
+
+  border: none;
+}
+
+.alert-error {
+  background-color: var(--error-color);
+  color: #FFF;
+
+  border: none;
+}
+
+.alert-primary {
+  background-color: var(--primary-color);
+  color: #FFF;
+
+  border: none;
+}
+
+.alert-dark {
+  background-color: var(--dark-color);
+  color: #FFF;
+
+  border: none;
+}
+
+.alert-light {
+  background-color: var(--light-color);
+  color: #333;
+}
+
+/* Grid, Flex, and text center. */
+.text-center {
+  text-align: center;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* Margin */
+.m-1 { margin: 1rem; }
+.m-2 { margin: 1.5rem; }
+.m-3 { margin: 2rem; }
+.m-4 { margin: 3rem; }
+.m-5 { margin: 4rem; }
+
+/* Margin Y*/
+.my-1 { margin: 1rem 0; }
+.my-2 { margin: 1.5rem 0; }
+.my-3 { margin: 2rem 0; }
+.my-4 { margin: 3rem 0; }
+.my-5 { margin: 4rem 0; }
+
+/* Margin X */
+.mx-1 { margin: 0 1rem; }
+.mx-2 { margin: 0 1.5rem; }
+.mx-3 { margin: 0 2rem; }
+.mx-4 { margin: 0 3rem; }
+.mx-5 { margin: 0 4rem;}
+
+/* Padding */
+.p-1 { padding: 1rem; }
+.p-2 { padding: 1.5rem; }
+.p-3 { padding: 2rem; }
+.p-4 { padding: 3rem; }
+.p-5 { padding: 4rem; }
+
+/* Padding Y*/
+.py-1 { padding: 1rem 0; }
+.py-2 { padding: 1.5rem 0; }
+.py-3 { padding: 2rem 0; }
+.py-4 { padding: 3rem 0; }
+.py-5 { padding: 4rem 0; }
+
+/* Padding X */
+.px-1 { padding: 0 1rem; }
+.px-2 { padding: 0 1.5rem; }
+.px-3 { padding: 0 2rem; }
+.px-4 { padding: 0 3rem; }
+.px-5 { padding: 0 4rem;}

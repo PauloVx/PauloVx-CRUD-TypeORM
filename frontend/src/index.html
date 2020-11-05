@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="styles/mini-css.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container flex">
+        <h3><a href="index.html">Crud TypeORM</a></h3>
+        <nav>
+          <ul>
+            <li><a href="new.html">Novo Post</a></li>
+            <li>
+              <label class="switch">
+                <input type="checkbox" id="theme-switch">
+                <span class="slider round"></span>
+              </label>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Posts list -->
+    <section class="posts-list">
+      <div class="container grid">
+        <!-- Inject posts -->
+        <p>Loading...</p>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container flex">
+        <p>Copyright &copy; 2020 <a href="http://github.com/PauloVx">PauloVx</a></p>
+        <nav class="footer-nav">
+          <ul class="flex">
+            <li><a href="https://github.com/PauloVx"><i class="fab fa-github"></i></a></li>
+            <li><a href=""><i class="fab fa-instagram"></i></a></li>
+            <li><a href=""><i class="fab fa-twitter"></i></a></li>
+            <li><a href=""><i class="fab fa-linkedin"></i></a></li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+
+    <script src="scripts/index.js"></script>
+    <script src="scripts/theme-switch.js"></script>
+  </body>
+</html>
