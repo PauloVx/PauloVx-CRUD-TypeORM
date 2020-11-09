@@ -25,8 +25,23 @@ class PostsController {
     return response.json(result).status(201);
   }
 
-  async details(request: Request, response: Response) {}
-  async delete(request: Request, response: Response) {}
+  async details(request: Request, response: Response) {
+    const { id } = request.params;
+    const postsRepository = getRepository(Post);
+
+    const post = await postsRepository.findOneOrFail(id);
+
+    return response.json(post);
+  }
+
+  async delete(request: Request, response: Response) {
+    const { id } = request.params;
+    const postsRepository = getRepository(Post);
+
+    const result = await postsRepository.delete(id);
+
+    return response.json(result);
+  }
 }
 
 export default new PostsController();
