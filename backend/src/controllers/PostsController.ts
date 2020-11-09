@@ -1,18 +1,32 @@
 import { Request, Response } from 'express';
+import { getRepository } from 'typeorm';
 
-export default {
+import { Post } from '../models/Post';
+
+class PostsController {
   async index(request: Request, response: Response) {
-    return response.json(
-      
-         [
-          {
-            "id": 4,
-            "title": "Quarto Post",
-            "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla aliquet nisl ut magna pellentesque commodo. Vivamus sed mauris id tortor maximus venenatis. Morbi vel erat ac leo luctus convallis in at ante. Phasellus commodo ultrices lorem eu porta. Donec blandit, ex a accumsan malesuada, ligula elit mollis sapien, non porta lacus libero a metus. Quisque mollis nibh nec lacus dignissim scelerisque. Mauris blandit tincidunt finibus. Etiam tincidunt nec magna vel dapibus. Proin consequat placerat nisi id mollis. Maecenas a facilisis mauris, vel ultricies lacus. Maecenas aliquet quam quis nisi luctus, ac semper purus varius. Sed eu ipsum ante. Sed euismod placerat nibh gravida volutpat.",
-            "likes": 354
-          },
-        ]
-      
-    );
+    const postsRepository = getRepository(Post);
+
+    const posts = await postsRepository.find();
+
+    return response.json(posts).status(201);
   }
+
+  async store(request: Request, response: Response) {
+    const postsRepository = getRepository(Post);
+
+    const post = {
+      title: request.body.title,
+      content: request.body.content,
+      likes: 0
+    }
+
+    const result = await postsRepository.save(post);
+    return response.json(result).status(201);
+  }
+
+  async details(request: Request, response: Response) {}
+  async delete(request: Request, response: Response) {}
 }
+
+export default new PostsController();
