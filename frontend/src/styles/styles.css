@@ -21,6 +21,8 @@
   color: var(--font-color);
 }
 
+html { height: 100%; }
+
 /* Header */
 header {
   color: #FFF;
@@ -58,13 +60,19 @@ header .container ul li a:hover {
 /* Body */
 body {
   background: var(--body-bg-color);
+
+  min-height: 100%;
+  position: relative;
+  padding-bottom: 150px;
 }
 
 /* Posts */
-
 .posts-list .container .card {
   margin-top: 25px;
   padding: 25px;
+
+  min-height: 225px;
+  max-width: 500px;
 }
 
 .posts-list .container .card h2 {
@@ -209,8 +217,11 @@ textarea::-webkit-input-placeholder {
 footer {
   background: var(--dark-color);
   color: #FFF;
-  height: 150px;
   margin-top: 50px;
+  
+  position: absolute; 
+  left: 0 ; right: 0; bottom: 0; 
+  height: 150px;
 }
 
 footer .container {

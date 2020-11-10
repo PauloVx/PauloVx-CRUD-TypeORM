@@ -10,7 +10,7 @@ function createPost(e) {
     likes: 0
   }
 
-  fetch('http://localhost:3000/posts', {
+  fetch('http://localhost:3333/posts', {
     method: 'POST',
     body: JSON.stringify(post),
     headers: {

@@ -8,9 +8,8 @@ function likePost(post) {
     content: post.content,
     likes: post.likes + 1
   }
-  console.log('AQUI')
 
-  fetch('http://localhost:3000/posts', {
+  fetch('http://localhost:3333/posts', {
     method: 'POST',
     body: JSON.stringify(finalPost),
     headers: {
@@ -20,8 +19,9 @@ function likePost(post) {
 }
 
 async function fetchPosts() {
-  const response = await fetch('http://localhost:3000/posts');
+  const response = await fetch('http://localhost:3333/posts');
   const posts = await response.json();
+  console.log(posts)
 
   let template = '';
 

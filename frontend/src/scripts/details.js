@@ -3,14 +3,14 @@ const detailsContainer = document.querySelector('.post-details .container');
 const id = new URLSearchParams(window.location.search).get('id');
 
 function deletePost(id) {
-  fetch(`http://localhost:3000/posts/${id}`, { method: 'DELETE' });
+  fetch(`http://localhost:3333/posts/${id}`, { method: 'DELETE' });
 
   window.location.replace("index.html");
 }
 
 async function fetchPost() {
 
-  const response = await fetch(`http://localhost:3000/posts/${id}`);
+  const response = await fetch(`http://localhost:3333/posts/${id}`);
   const post = await response.json();
 
   const template = `
