@@ -9,4 +9,6 @@ router.post('/posts', PostsController.store);
 router.get('/posts/:id', PostsController.details);
 router.delete('/posts/:id', PostsController.delete);
 
+router.patch('/like/:id', PostsController.likePost);
+
 export default router;

@@ -21,6 +21,8 @@ class PostsController {
       likes: 0
     }
 
+    if(!post.title || !post.content) return response.json({ error: 'One of the fields is missing!' }).status(400);
+
     const result = await postsRepository.save(post);
     return response.json(result).status(201);
   }
@@ -41,6 +43,23 @@ class PostsController {
     const result = await postsRepository.delete(id);
 
     return response.json(result);
+  }
+
+  async likePost(request: Request, response: Response) {
+    const { id } = request.params;
+    const postsRepository = getRepository(Post);
+
+    const post = await postsRepository.findOneOrFail(id);
+
+    const newPost = {
+      title: post.title,
+      content: post.content,
+      likes: post.likes + 1
+    };
+
+    await postsRepository.update(post, newPost);
+
+    return response.json(newPost);
   }
 }
 
