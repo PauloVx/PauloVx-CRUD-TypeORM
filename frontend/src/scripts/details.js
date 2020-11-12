@@ -2,6 +2,12 @@ const detailsContainer = document.querySelector('.post-details .container');
 
 const id = new URLSearchParams(window.location.search).get('id');
 
+function likePost(id) {
+  fetch(`http://localhost:3333/like/${id}`, {
+    method: 'PATCH',
+  }).then(window.location.replace(`details.html?id=${id}`));
+}
+
 function deletePost(id) {
   fetch(`http://localhost:3333/posts/${id}`, { method: 'DELETE' });
 
@@ -18,7 +24,10 @@ async function fetchPost() {
     <div class="card flex">
       <h1 class="lg px-1">${post.title}</h1>
       <p class="md p-1">${post.content}</p>  
-      <span class="lead p-1">${post.likes} Likes</span> 
+      <div class="likes-row flex">
+        <span class="lead p-1">${post.likes} Likes</span>
+      <button onclick="likePost(${post.id})"><i class="fas fa-thumbs-up"></i></button>
+    </div>
     </div>
     <div class="flex post-buttons">
       <a href="index.html" class="btn btn-dark">Voltar</a>

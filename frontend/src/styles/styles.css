@@ -92,7 +92,8 @@ body {
   font-size: 18px;
 }
 
-.posts-list .container .card .post-info .likes button {
+.posts-list .container .card .post-info .likes button,
+.post .card .likes-row button { /* <- Details page like btn. */
   padding: 5px;
   border: none;
   background: transparent;
@@ -100,7 +101,8 @@ body {
 
   transition: transform 0.3s;
 }
-.posts-list .container .card .post-info .likes button:hover {
+.posts-list .container .card .post-info .likes button:hover,
+.post .card .likes-row button:hover { /* <- Details page like btn. */
   cursor: pointer;
   transform: scale(1.4);
 }
@@ -122,10 +124,19 @@ body {
   border-left: 8px solid var(--dark-color);
 }
 
-.post .card span {
+.post .card .likes-row {
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 60px;
+}
+
+.post .card .likes-row span {
   display: inline-block;
   border-left: 8px solid var(--dark-color);
-  margin-top: 60px;
+}
+
+.post .card .likes-row button {
+  font-size: 28px;
 }
 
 .post .flex.post-buttons {
