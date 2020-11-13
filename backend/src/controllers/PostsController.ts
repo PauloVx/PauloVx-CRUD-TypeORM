@@ -5,11 +5,18 @@ import { Post } from '../models/Post';
 
 class PostsController {
   async index(request: Request, response: Response) {
+    const { search } = request.query;
+
     const postsRepository = getRepository(Post);
 
-    const posts = await postsRepository.find();
+    // No filter, return all posts.
+    if(!search) {
+      const posts = await postsRepository.find();
+      return response.json(posts);
+    }
 
-    return response.json(posts).status(201);
+    const filteredPosts = await postsRepository.query(`SELECT * FROM posts WHERE title LIKE '%${search}%'`);
+    return response.json(filteredPosts);
   }
 
   async store(request: Request, response: Response) {
