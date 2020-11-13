@@ -5,6 +5,9 @@
   --font-color: #444;
   --card-bg-color: #FFF;
   --form-bg-color: #FFF;
+
+  --search-border-color: #DDD;
+  --btn-search-border-color: var(--dark-color);
 }
 
 .dark-mode:root {
@@ -13,6 +16,9 @@
     --font-color: #D5D5D5;
     --card-bg-color: #001425;
     --form-bg-color: transparent;
+
+    --search-border-color: #DDD;
+    --btn-search-border-color: #DDD;
 }
 
 /*General*/
@@ -64,6 +70,57 @@ body {
   min-height: 100%;
   position: relative;
   padding-bottom: 150px;
+}
+
+.search .container {
+  margin-top: 30px;
+}
+
+/* Posts Search */
+.search .container input {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+
+  width: 70%;
+  height: 50px;
+  border: none;
+  outline: none;
+
+  padding: 0 15px;
+  font-weight: bold;
+  font-size: 20px;
+  color: #444;
+  background: #FFF;
+
+  border-left: 1px solid var(--search-border-color);
+  border-top: 1px solid var(--search-border-color);
+  border-bottom: 1px solid var(--search-border-color);
+}
+
+.search .container button {
+  width: 40px;
+  height: 50px;
+
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+
+  border: none;
+  outline: none;
+  background: var(--dark-color);
+
+  border-right: 1px solid var(--btn-search-border-color);
+  border-top: 1px solid var(--btn-search-border-color);
+  border-bottom: 1px solid var(--btn-search-border-color);
+
+  transition: background-color 0.2s;
+}
+.search .container button:hover {
+  cursor: pointer;
+  background: #182e70;
+}
+
+.search .container i {
+  color: #FFF;
 }
 
 /* Posts */
