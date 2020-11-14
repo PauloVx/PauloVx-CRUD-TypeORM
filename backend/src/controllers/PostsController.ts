@@ -6,6 +6,7 @@ import { Post } from '../models/Post';
 class PostsController {
   async index(request: Request, response: Response) {
     const { search } = request.query;
+    const searchUpper = search.toString().toUpperCase();
 
     const postsRepository = getRepository(Post);
 
@@ -15,7 +16,8 @@ class PostsController {
       return response.json(posts);
     }
 
-    const filteredPosts = await postsRepository.query(`SELECT * FROM posts WHERE title LIKE '%${search}%'`);
+    const filteredPosts = await postsRepository.query(`SELECT * FROM posts WHERE UPPER(title) LIKE '%${searchUpper}%'`);
+
     return response.json(filteredPosts);
   }
 
