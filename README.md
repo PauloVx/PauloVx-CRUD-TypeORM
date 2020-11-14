@@ -10,7 +10,7 @@
 ### Features:
 * Darkmode salvo no localstorage.
 * Design responsivo.
-* Capacidade de listar, criar, buscar e deletar posts.
+* Capacidade de listar, criar, buscar, deletar e dar like em posts.
 ### Screenshots
 ##### OBS: Algumas imagens estarão em tema escuro para demonstração.
 ![index dark](https://user-images.githubusercontent.com/49623348/99154767-00c5ab80-2691-11eb-9080-e11e5d1d5263.png)
