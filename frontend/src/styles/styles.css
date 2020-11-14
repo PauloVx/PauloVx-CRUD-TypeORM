@@ -139,6 +139,10 @@ body {
 
   min-height: 225px;
   max-width: 500px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .posts-list .container .card h2 {
