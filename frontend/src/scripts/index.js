@@ -17,6 +17,13 @@ async function searchPosts() {
   
   let template = '';
 
+  //No posts found.
+  if(filteredPosts.length < 1) {
+    template = `<h1 class="not-found-text">Nenhum resultado encontrado para a pesquisa "${searchValue}".</h1>`
+    postsContainer.innerHTML = template;
+    return;
+  }
+
   filteredPosts.forEach(post => {
     template += 
    `<div class="card">

@@ -96,6 +96,7 @@ body {
   border-top: 1px solid var(--search-border-color);
   border-bottom: 1px solid var(--search-border-color);
 }
+.search .container input::placeholder { color: #CCC; }
 
 .search .container button {
   width: 40px;
@@ -121,6 +122,14 @@ body {
 
 .search .container i {
   color: #FFF;
+}
+
+.posts-list .container .not-found-text {
+  color: var(--font-color);
+
+  margin-top: 60px;
+  grid-column: span 2;
+  text-align: center;
 }
 
 /* Posts */
